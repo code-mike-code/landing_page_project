@@ -1,0 +1,238 @@
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.header-btn-animation {
+  position: relative;
+  transition: background-color 0.3s;
+  overflow: hidden;
+  z-index: 0;
+}
+.header-btn-animation::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+  z-index: -1;
+}
+.header-btn-animation:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+}
+
+.burger-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  padding: 1.2em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  z-index: 1000;
+}
+.burger-btn:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+.burger-btn:hover .burger-btn__bars,
+.burger-btn:hover .burger-btn__bars::after,
+.burger-btn:hover .burger-btn__bars::before {
+  width: 100%;
+}
+.burger-btn__box {
+  position: relative;
+  width: 40px;
+  height: 30px;
+}
+.burger-btn__bars, .burger-btn__bars::before, .burger-btn__bars::after {
+  position: absolute;
+  right: 0;
+  height: 3px;
+  content: "";
+  background-color: #fff;
+  transition: width 0.3s;
+}
+.burger-btn__bars {
+  width: 100%;
+  bottom: 0;
+}
+.burger-btn__bars::after {
+  bottom: 13px;
+  width: 60%;
+}
+.burger-btn__bars::before {
+  bottom: 27px;
+  width: 30%;
+  transition-delay: 0.1s;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(100%);
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  background-image: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
+  z-index: 100;
+}
+.nav--active {
+  transform: translateX(0);
+}
+.nav__item {
+  position: relative;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 0.5em 0;
+  padding: 0.6em 1.6em;
+  font-size: 4rem;
+}
+.nav__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 75%;
+  transform: scaleY(0);
+  background-color: #fff;
+  content: "";
+  transition: transform 0.3s;
+}
+.nav__item:hover::before {
+  transform: scaleY(1);
+}
+
+@keyframes navItemsAnimation {
+  from {
+    transform: translateX(340%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.nav-item-animation {
+  animation: navItemsAnimation 1s both;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5em;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), url("../img/hero-img_640.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-attachment: scroll;
+}
+.header__logo {
+  position: fixed;
+  top: 30px;
+  padding: 0 0.8em 0 0.4em;
+  font-family: "Vina Sans", sans-serif;
+  font-size: 6rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #2e2e2e;
+  background: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75));
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.header__span {
+  font-size: 3.2rem;
+  text-transform: lowercase;
+  color: #0fe29c;
+}
+.header__title {
+  font-family: "Raleway", cursive;
+  font-size: 4.4rem;
+  font-weight: 300;
+  text-shadow: 2px 2px 1px #2e2e2e;
+}
+.header__text {
+  font-size: 1.5rem;
+}
+.header__btn {
+  margin-top: 30px;
+  padding: 0.8em 1.6em;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 4px 4px 7px #2e2e2e;
+  background: #fff;
+  color: #2e2e2e;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.header__btn::before {
+  background-color: #eee;
+}
+
+@media (min-width: 768px) {
+  .burger-btn {
+    transform: scale(1.4);
+    bottom: 36px;
+    right: 26px;
+  }
+  .header__title {
+    font-size: 6rem;
+  }
+  .header__text {
+    font-size: 2rem;
+  }
+  .header__btn {
+    font-size: 2.2rem;
+  }
+}
+@media (min-width: 992px) {
+  .burger-btn {
+    transform: scale(1.6);
+    bottom: 52px;
+    right: 42px;
+  }
+  .header {
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), url(../img/hero-img_1920.jpeg);
+  }
+  .header__title {
+    font-size: 8rem;
+  }
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,244 @@
+@import './colors';
+@import './components';
+@import './mixins';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.6rem;
+}
+
+//  NAV
+// ======================================
+
+.burger-btn {
+	position: fixed;
+	bottom: 30px;
+	right: 20px;
+	padding: 1.2em;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 1000;
+
+	&:focus {
+		outline: none;
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		border-radius: 8px;
+	}
+
+	&:hover {
+		.burger-btn__bars,
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
+			width: 100%;
+		}
+	}
+
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+
+	&__bars,
+	&__bars::before,
+	&__bars::after {
+		@include burgerBtn;
+	}
+
+	&__bars {
+		width: 100%;
+		bottom: 0;
+
+		&::after {
+			bottom: 13px;
+			width: 60%;
+		}
+
+		&::before {
+			bottom: 27px;
+			width: 30%;
+			transition-delay: 0.1s;
+		}
+	}
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	transform: translateX(100%);
+	transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	background-image: $blue-gradient-solid;
+	z-index: 100;
+
+	&--active {
+		transform: translateX(0);
+	}
+
+	&__item {
+		position: relative;
+		display: block;
+		color: $pure-white;
+		text-decoration: none;
+		margin: 0.5em 0;
+		padding: 0.6em 1.6em;
+		font-size: 4rem;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 5px;
+			height: 75%;
+			transform: scaleY(0);
+			background-color: $pure-white;
+			content: '';
+			transition: transform 0.3s;
+		}
+		&:hover::before {
+			transform: scaleY(1);
+		}
+	}
+}
+
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(340%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.nav-item-animation {
+	animation: navItemsAnimation 1s both;
+}
+
+//    HEADER
+// ======================================
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 1.5em;
+	height: 100vh;
+	text-align: center;
+	color: $pure-white;
+	@include heroImages('../img/hero-img_640.jpeg');
+	background-attachment: scroll;
+
+	&__logo {
+		position: fixed;
+		top: 30px;
+		padding: 0 0.8em 0 0.4em;
+		//height: 40px;
+		font-family: 'Vina Sans', sans-serif;
+		font-size: 6rem;
+		border: none;
+		border-radius: 10px;
+		box-shadow: 2px 2px 2px $dark;
+		background: $blue-gradient;
+		color: $pure-white;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+
+	&__span {
+		font-size: 3.2rem;
+		text-transform: lowercase;
+		color: $green-color-hover;
+	}
+
+	&__title {
+		font-family: 'Raleway', cursive;
+		font-size: 4.4rem;
+		font-weight: 300;
+		text-shadow: 2px 2px 1px $dark;
+	}
+	&__text {
+		font-size: 1.5rem;
+	}
+
+	&__btn {
+		//position: fixed;
+		//bottom: 40px;
+		margin-top: 30px;
+		padding: 0.8em 1.6em;
+		//height: 40px;
+		font-size: 1.5rem;
+		border: none;
+		border-radius: 50px;
+		box-shadow: 4px 4px 7px $dark;
+		background: $pure-white;
+		color: $dark;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&::before {
+			background-color: $light-white;
+		}
+	}
+}
+
+//  MEDIA QUARIES
+//========================================================
+//========================================================
+
+@media (min-width: 768px) {
+	.burger-btn {
+		transform: scale(1.4);
+		bottom: 36px;
+		right: 26px;
+	}
+
+	.header {
+		&__title {
+			font-size: 6rem;
+		}
+		&__text {
+			font-size: 2rem;
+		}
+		&__btn {
+			font-size: 2.2rem;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.burger-btn {
+		transform: scale(1.6);
+		bottom: 52px;
+		right: 42px;
+	}
+
+	.header {
+		background-image: $blue-gradient, url(../img/hero-img_1920.jpeg);
+
+		&__title {
+			font-size: 8rem;
+		}
+	}
+}
