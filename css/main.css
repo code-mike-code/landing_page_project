@@ -28,6 +28,37 @@
   transform-origin: left;
 }
 
+.section-heading {
+  position: relative;
+  margin-bottom: 2em;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  color: #1755e7;
+  letter-spacing: 2px;
+}
+
+.section-padding {
+  padding: 6em 2em;
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 3.6rem;
+  }
+  .section-padding {
+    padding: 8em 2em;
+  }
+}
+@media (min-width: 992px) {
+  .section-heading {
+    font-size: 4.8rem;
+  }
+  .section-padding {
+    padding: 10em 2em;
+  }
+}
 *,
 *::before,
 *::after {
@@ -162,7 +193,7 @@ body {
   background-attachment: scroll;
 }
 .header__logo {
-  position: fixed;
+  position: absolute;
   top: 30px;
   padding: 0 0.8em 0 0.4em;
   font-family: "Vina Sans", sans-serif;
@@ -182,7 +213,7 @@ body {
   color: #0fe29c;
 }
 .header__title {
-  font-family: "Raleway", cursive;
+  font-family: "Raleway", sans-serif;
   font-size: 4.4rem;
   font-weight: 300;
   text-shadow: 2px 2px 1px #2e2e2e;
@@ -207,6 +238,115 @@ body {
   background-color: #eee;
 }
 
+.about__box {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+}
+.about__img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.about__title {
+  margin-bottom: 0.5em;
+}
+.about__text {
+  font-size: 1.4rem;
+}
+
+.hero-img {
+  position: relative;
+  padding: 10em 2em;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), url("../img/hemp_640.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+}
+.hero-img__title {
+  margin-bottom: 0.5em;
+  font-family: "Raleway", sans-serif;
+  font-size: 4.8rem;
+  font-weight: 300;
+  text-shadow: 2px 2px 1px #2e2e2e;
+  letter-spacing: 2px;
+}
+.hero-img__text {
+  padding: 1em 0;
+}
+.hero-img hr {
+  margin: 0 auto;
+}
+
+.projects__card {
+  position: relative;
+  margin: 1em 0;
+  height: 450px;
+  color: #fff;
+  text-align: center;
+  perspective: 1000px;
+}
+.projects__card:hover .projects__card-img {
+  transform: rotateY(-180deg);
+  opacity: 0;
+}
+.projects__card:hover .projects__card-info {
+  transform: rotateY(0);
+  opacity: 1;
+}
+.projects__card-img {
+  padding: 2em;
+  height: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  transition: transform 1s, opacity 1s;
+}
+.projects__card-img--first {
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), url("../img/insoles_0916.jpeg");
+}
+.projects__card-img--second {
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), url("../img/cbd-oil_640.jpeg");
+}
+.projects__card-img--third {
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), url("../img/textiles_640.jpeg");
+}
+.projects__card-img-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.8rem;
+}
+.projects__card-img-info {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.4rem;
+}
+.projects__card-img-info i {
+  margin-right: 0.3em;
+}
+
+@media (min-width: 576px) {
+  .about__box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .about__box-text {
+    width: 55%;
+  }
+  .about__box-text--right {
+    text-align: right;
+  }
+  .about__box-img {
+    width: 40%;
+  }
+  .about__box-img--right {
+    order: 1;
+  }
+  .about__img {
+    margin-bottom: 0;
+    max-height: 300px;
+  }
+}
 @media (min-width: 768px) {
   .burger-btn {
     transform: scale(1.4);
@@ -222,6 +362,18 @@ body {
   .header__btn {
     font-size: 2.2rem;
   }
+  .about__title {
+    font-size: 2.2rem;
+  }
+  .about__text {
+    font-size: 1.7rem;
+  }
+  .hero-img {
+    padding: 25rem 2em;
+  }
+  .hero-img__text {
+    font-size: 2.2rem;
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
@@ -230,9 +382,40 @@ body {
     right: 42px;
   }
   .header {
-    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), url(../img/hero-img_1920.jpeg);
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), url("../img/hero-img_1920.jpeg");
   }
   .header__title {
     font-size: 8rem;
+  }
+  .nav__item {
+    font-size: 4.8rem;
+  }
+  .about__box {
+    margin: 5em 0;
+  }
+  .about__box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 2em;
+  }
+  .about__title {
+    font-size: 3.2rem;
+  }
+  .about__text {
+    font-size: 2.2rem;
+  }
+  .hero-img {
+    padding: 30rem 2em;
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)) url("../img/hemp_1920.jpeg");
+  }
+  .hero-img__title {
+    font-size: 6.6rem;
+  }
+  .hero-img__text {
+    font-size: 2.6rem;
+  }
+  .hero-img hr {
+    max-width: 1000px;
   }
 }/*# sourceMappingURL=main.css.map */
