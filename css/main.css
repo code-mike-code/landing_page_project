@@ -381,6 +381,53 @@ body {
   background-color: #0fe29c;
 }
 
+.shop-img {
+  position: relative;
+  padding: 10em 2em;
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), url("../img/insoles_0916.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  color: #fff;
+}
+.shop-img__title {
+  margin-bottom: 0.5em;
+  font-family: "Raleway", sans-serif;
+  font-size: 4.8rem;
+  font-weight: 300;
+  text-shadow: 2px 2px 1px #2e2e2e;
+  letter-spacing: 2px;
+}
+.shop-img__text {
+  padding: 1em 0;
+}
+.shop-img__btn {
+  position: absolute;
+  transform: translateX(-50%);
+  bottom: 20%;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 50px;
+  width: 85%;
+  box-shadow: 4px 4px 7px #2e2e2e;
+  background: #00ffaa;
+  color: #2e2e2e;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.shop-img__btn-link {
+  text-decoration: none;
+  color: #2e2e2e;
+  font-size: 2.2rem;
+}
+.shop-img__btn::before {
+  background-color: #0fe29c;
+}
+.shop-img hr {
+  margin: 0 auto;
+}
+
 .faq__box {
   position: relative;
   display: flex;
@@ -399,7 +446,7 @@ body {
 }
 .faq__accordion {
   margin: 0.2em auto;
-  width: 75%;
+  width: 94%;
 }
 .faq__accordion-item {
   list-style: none;
@@ -427,17 +474,102 @@ body {
 }
 .faq__accordion-content {
   color: #2e2e2e;
-  padding: 0 1em;
-  line-height: 3.2rem;
+  padding: 0 0.6em;
+  line-height: 2.2rem;
   max-height: 0;
   overflow: hidden;
   transition: max-height 1s;
 }
 input[type=radio]:checked + label + .faq__accordion-content {
-  max-height: 400px;
+  max-height: 460px;
 }
 .faq__accordion input[type=radio]:checked + label::before {
   content: "-";
+}
+
+.contact {
+  position: relative;
+  background-color: #eee;
+  overflow: hidden;
+}
+.contact__form, .contact__form-top {
+  display: flex;
+  flex-direction: column;
+}
+.contact__form-label {
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+.contact__form-input {
+  margin-bottom: 2em;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
+}
+.contact__form-textarea {
+  margin-bottom: 2em;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+  min-height: 150px;
+}
+.contact__form-btn {
+  align-self: flex-end;
+  padding: 1em;
+  width: 100%;
+  max-width: 300px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  background-color: #1755e7;
+  cursor: pointer;
+}
+.contact__form-btn::before {
+  background-color: #164dcc;
+}
+
+.footer {
+  color: #fff;
+  background-color: #2e2e2e;
+}
+.footer .wrapper {
+  padding: 6em 2em 2em;
+}
+.footer__box {
+  font-size: 1.4rem;
+}
+.footer__box-desktop {
+  display: none;
+}
+.footer__box-title {
+  margin-bottom: 1em;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.footer__box-social {
+  margin: 2em 0 1em;
+}
+.footer__box-link {
+  padding: 0 0.3em;
+  font-size: 3.6rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer__box-link:first-child {
+  padding-left: 0;
+}
+.footer__box-link:hover {
+  color: #eee;
+}
+.footer__bottom-text {
+  padding: 2em;
+  text-align: center;
 }
 
 @media (min-width: 576px) {
@@ -460,6 +592,15 @@ input[type=radio]:checked + label + .faq__accordion-content {
   .about__img {
     margin-bottom: 0;
     max-height: 300px;
+  }
+  .shop-img__text {
+    font-size: 1.8rem;
+  }
+  .shop-img__btn {
+    width: 72%;
+  }
+  .shop-img__btn-link {
+    font-size: 2.8rem;
   }
 }
 @media (min-width: 768px) {
@@ -497,6 +638,39 @@ input[type=radio]:checked + label + .faq__accordion-content {
   .projects__card {
     margin: 1em;
     width: 45%;
+  }
+  .shop-img {
+    padding: 25rem 2em;
+  }
+  .shop-img__text {
+    font-size: 2.4rem;
+  }
+  .shop-img__btn {
+    width: 66%;
+  }
+  .shop-img__btn-link {
+    font-size: 3.6rem;
+  }
+  .faq__box {
+    margin: 0 2em;
+  }
+  .faq__box-title {
+    margin: 1.2em;
+    font-size: 3.2rem;
+  }
+  .faq__accordion {
+    margin: 0.4em auto;
+    width: 100%;
+  }
+  .faq__accordion-label {
+    font-size: 2.4rem;
+  }
+  .faq__accordion-label::before {
+    font-size: 2.8rem;
+  }
+  .faq__accordion-content {
+    font-size: 1.9rem;
+    line-height: 3rem;
   }
 }
 @media (min-width: 992px) {
@@ -541,6 +715,39 @@ input[type=radio]:checked + label + .faq__accordion-content {
   }
   .hero-img hr {
     max-width: 1000px;
+  }
+  .shop-img {
+    padding: 30rem 2em;
+    background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)) url("../img/insoles_0916.jpeg");
+  }
+  .shop-img__title {
+    font-size: 6.6rem;
+  }
+  .shop-img__text {
+    font-size: 3rem;
+  }
+  .shop-img__btn {
+    padding: 0.8em 1.6em;
+    width: 50%;
+  }
+  .shop-img hr {
+    max-width: 1000px;
+  }
+  .faq__box {
+    margin: 0 3em;
+  }
+  .faq__accordion {
+    margin: 0.8em auto;
+  }
+  .faq__accordion-label {
+    font-size: 2.8rem;
+  }
+  .faq__accordion-label::before {
+    font-size: 3.4rem;
+  }
+  .faq__accordion-content {
+    font-size: 2.2rem;
+    line-height: 3.4rem;
   }
 }
 @media (min-width: 1100px) {

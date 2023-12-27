@@ -374,6 +374,58 @@ body {
 	}
 }
 
+// SECTION SHOP
+//============================
+
+.shop-img {
+	position: relative;
+	padding: 10em 2em;
+	@include heroImages('../img/insoles_0916.jpeg');
+	text-align: center;
+	color: $pure-white;
+
+	&__title {
+		margin-bottom: 0.5em;
+		font-family: 'Raleway', sans-serif;
+		font-size: 4.8rem;
+		font-weight: 300;
+		text-shadow: 2px 2px 1px $dark;
+		letter-spacing: 2px;
+	}
+
+	&__text {
+		padding: 1em 0;
+	}
+	&__btn {
+		position: absolute;
+		transform: translateX(-50%);
+		bottom: 20%;
+		padding: 0.6em 1.2em;
+
+		border: none;
+		border-radius: 50px;
+		width: 85%;
+		box-shadow: 4px 4px 7px $dark;
+		background: $green-color;
+		color: $dark;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&-link {
+			text-decoration: none;
+			color: $dark;
+			font-size: 2.2rem;
+		}
+
+		&::before {
+			background-color: $green-color-hover;
+		}
+	}
+	hr {
+		margin: 0 auto;
+	}
+}
+
 //  SECTION FAQ
 // ============================
 
@@ -388,7 +440,7 @@ body {
 			margin-bottom: 2em;
 			padding-bottom: 1em;
 			text-align: center;
-            font-size: 2.6rem;
+			font-size: 2.6rem;
 			border-bottom: 1px solid $dark;
 		}
 
@@ -398,7 +450,7 @@ body {
 	}
 	&__accordion {
 		margin: 0.2em auto;
-		width: 75%;
+		width: 94%;
 
 		&-item {
 			list-style: none;
@@ -429,19 +481,115 @@ body {
 
 		&-content {
 			color: $dark;
-			padding: 0 1em;
-			line-height: 3.2rem;
+			padding: 0 0.6em;
+			line-height: 2.2rem;
 			max-height: 0;
 			overflow: hidden;
 			transition: max-height 1s;
 		}
 
 		input[type='radio']:checked + label + &-content {
-			max-height: 400px;
+			max-height: 460px;
 		}
 		input[type='radio']:checked + label::before {
 			content: '-';
 		}
+	}
+}
+
+// SECTION CONTACT
+//==========================
+
+.contact {
+	position: relative;
+	background-color: $light-white;
+	overflow: hidden;
+
+	&__form,
+	&__form-top {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__form-label {
+		margin-bottom: 0.5em;
+		text-transform: uppercase;
+	}
+
+	&__form-input {
+		@include contactForm;
+	}
+	&__form-textarea {
+		@include contactForm;
+
+		max-width: 100%;
+		min-width: 100%;
+		width: 100%;
+		min-height: 150px;
+	}
+
+	&__form-btn {
+		align-self: flex-end;
+		padding: 1em;
+		width: 100%;
+		max-width: 300px;
+		color: $pure-white;
+		border: none;
+		border-radius: 8px;
+		background-color: $main-color;
+		cursor: pointer;
+
+		&::before {
+			background-color: $secondary-color;
+		}
+	}
+}
+
+// SECTION FOOTER
+//==============================
+
+.footer {
+	color: $pure-white;
+	background-color: $dark;
+
+	.wrapper {
+		padding: 6em 2em 2em;
+	}
+	&__box {
+		font-size: 1.4rem;
+	}
+
+	&__box-desktop {
+		display: none;
+	}
+	&__box-title {
+		margin-bottom: 1em;
+		font-size: 3rem;
+		text-transform: uppercase;
+	}
+
+	&__box-social {
+		margin: 2em 0 1em;
+	}
+
+	&__box-link {
+		padding: 0 0.3em;
+		font-size: 3.6rem;
+		color: $pure-white;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:hover {
+			color: $light-white;
+		}
+	}
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
 	}
 }
 
@@ -475,6 +623,18 @@ body {
 		&__img {
 			margin-bottom: 0;
 			max-height: 300px;
+		}
+	}
+
+	.shop-img {
+		&__text {
+			font-size: 1.8rem;
+		}
+		&__btn {
+			width: 72%;
+			&-link {
+				font-size: 2.8rem;
+			}
 		}
 	}
 }
@@ -525,6 +685,48 @@ body {
 		&__card {
 			margin: 1em;
 			width: 45%;
+		}
+	}
+
+	.shop-img {
+		padding: 25rem 2em;
+
+		&__text {
+			font-size: 2.4rem;
+		}
+		&__btn {
+			width: 66%;
+			&-link {
+				font-size: 3.6rem;
+			}
+		}
+	}
+
+	.faq {
+		&__box {
+			margin: 0 2em;
+
+			&-title {
+				margin: 1.2em;
+				font-size: 3.2rem;
+			}
+		}
+		&__accordion {
+			margin: 0.4em auto;
+			width: 100%;
+
+			&-label {
+				font-size: 2.4rem;
+
+				&::before {
+					font-size: 2.8rem;
+				}
+			}
+
+			&-content {
+				font-size: 1.9rem;
+				line-height: 3rem;
+			}
 		}
 	}
 }
@@ -582,6 +784,48 @@ body {
 		}
 		hr {
 			max-width: 1000px;
+		}
+	}
+
+	.shop-img {
+		padding: 30rem 2em;
+		background-image: $blue-gradient url('../img/insoles_0916.jpeg');
+
+		&__title {
+			font-size: 6.6rem;
+		}
+
+		&__text {
+			font-size: 3rem;
+		}
+		&__btn {
+			padding: 0.8em 1.6em;
+			width: 50%;
+		}
+
+		hr {
+			max-width: 1000px;
+		}
+	}
+	.faq {
+		&__box {
+			margin: 0 3em;
+		}
+		&__accordion {
+			margin: 0.8em auto;
+
+			&-label {
+				font-size: 2.8rem;
+
+				&::before {
+					font-size: 3.4rem;
+				}
+			}
+
+			&-content {
+				font-size: 2.2rem;
+				line-height: 3.4rem;
+			}
 		}
 	}
 }
