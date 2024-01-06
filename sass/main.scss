@@ -25,7 +25,7 @@ body {
 
 .burger-btn {
 	position: fixed;
-	bottom: 30px;
+	top: 20px;
 	right: 20px;
 	padding: 1.2em;
 	background: none;
@@ -132,6 +132,11 @@ body {
 	animation: navItemsAnimation 1s both;
 }
 
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: $dark;
+}
 //    HEADER
 // ======================================
 
@@ -149,20 +154,23 @@ body {
 	background-attachment: scroll;
 
 	&__logo {
-		position: absolute;
-		top: 30px;
+		position: fixed;
+		top: 20px;
+		left: 20px;
 		padding: 0 0.8em 0 0.4em;
 		//height: 40px;
 		font-family: 'Vina Sans', sans-serif;
-		font-size: 6rem;
+		font-size: 5rem;
 		border: none;
 		border-radius: 10px;
 		box-shadow: 2px 2px 2px $dark;
+		box-shadow: 6px 6px 10px -1px $blue-gradient, -6px -6px 10px -1px rgba(240, 240, 240, 0.7);
 		background: $blue-gradient;
 		color: $pure-white;
 		text-decoration: none;
 		text-transform: uppercase;
 		cursor: pointer;
+		z-index: 1000;
 	}
 
 	&__span {
@@ -513,6 +521,7 @@ body {
 
 	&__form-label {
 		margin-bottom: 0.5em;
+		font-size: 2.2rem;
 		text-transform: uppercase;
 	}
 
@@ -526,13 +535,15 @@ body {
 		min-width: 100%;
 		width: 100%;
 		min-height: 150px;
+		//resize: vertical;
 	}
 
 	&__form-btn {
 		align-self: flex-end;
-		padding: 1em;
+		padding: 0.6em 0.8em;
 		width: 100%;
 		max-width: 300px;
+		font-size: 2.4rem;
 		color: $pure-white;
 		border: none;
 		border-radius: 8px;
@@ -543,6 +554,25 @@ body {
 			background-color: $secondary-color;
 		}
 	}
+	&__form-msg-status {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 50px;
+		padding: 2em;
+		width: 60%;
+		border-radius: 10px;
+		font-size: 2.4rem;
+	}
+}
+.success {
+	display: flex;
+	background-color: $green-color;
+}
+.error {
+	display: flex;
+	background-color: $red-color;
 }
 
 // SECTION FOOTER
@@ -553,7 +583,7 @@ body {
 	background-color: $dark;
 
 	.wrapper {
-		padding: 6em 2em 2em;
+		padding: 5em 2em 2em;
 	}
 	&__box {
 		font-size: 1.4rem;
@@ -565,7 +595,16 @@ body {
 	&__box-title {
 		margin-bottom: 1em;
 		font-size: 3rem;
-		text-transform: uppercase;
+	}
+	&__box-logo {
+		margin-bottom: 0.5em;
+		font-family: 'Vina Sans', sans-serif;
+		font-size: 5.8rem;
+	}
+	&__span {
+		font-size: 3.2rem;
+		text-transform: lowercase;
+		color: $green-color-hover;
 	}
 
 	&__box-social {
@@ -588,7 +627,7 @@ body {
 		}
 	}
 	&__bottom-text {
-		padding: 2em;
+		padding: 3em;
 		text-align: center;
 	}
 }
@@ -642,7 +681,7 @@ body {
 @media (min-width: 768px) {
 	.burger-btn {
 		transform: scale(1.4);
-		bottom: 36px;
+		top: 36px;
 		right: 26px;
 	}
 
@@ -655,6 +694,11 @@ body {
 		}
 		&__btn {
 			font-size: 2.2rem;
+		}
+
+		&__logo {
+			top: 36px;
+			left: 26px;
 		}
 	}
 
@@ -729,12 +773,47 @@ body {
 			}
 		}
 	}
+
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__box-desktop {
+			display: block;
+		}
+
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+
+			&:first-child {
+				width: 50%;
+			}
+		}
+
+		&__box-title {
+			font-size: 2.4rem;
+		}
+
+		&__box-list {
+			list-style: none;
+		}
+		&__box-list-item {
+			margin-bottom: 1em;
+			a {
+				color: $light-white;
+				text-decoration: none;
+			}
+		}
+	}
 }
 
 @media (min-width: 992px) {
 	.burger-btn {
 		transform: scale(1.6);
-		bottom: 52px;
+		top: 52px;
 		right: 42px;
 	}
 
@@ -743,6 +822,10 @@ body {
 
 		&__title {
 			font-size: 8rem;
+		}
+		&__logo {
+			top: 52px;
+			left: 42px;
 		}
 	}
 
@@ -834,6 +917,16 @@ body {
 	.projects {
 		&__card {
 			width: 30%;
+		}
+	}
+	.shop-img {
+		&__btn {
+			padding: 0.8em 1.6em;
+			width: 30%;
+		}
+
+		hr {
+			max-width: 1000px;
 		}
 	}
 }

@@ -157,7 +157,8 @@
             <hr>
             <p class="shop-img__text">Dobra zaprojektowane przez naturę dla lepszej jakości życia.</p>
             <hr>
-            <button class="shop-img__btn header-btn-animation"><a href="https://wkladkizkonopi.pl/" class="shop-img__btn-link">wkladkizkonopi.pl</a></button>
+            <button class="shop-img__btn header-btn-animation"><a href="https://wkladkizkonopi.pl/" target="_blank
+                " class="shop-img__btn-link">wkladkizkonopi.pl</a></button>
         </section>
 
 
@@ -244,20 +245,22 @@
             <h2 class="section-heading">Kontakt</h2>
             <div class="wrapper">
 
-                <form class="contact__form">
+                <form action="mail.php" method="post" class="contact__form">
 
                     <div class="contact__form-top">
 
                         <label for="name" class="contact__form-label">Imię i nazwisko</label>
-                        <input type="text" class="contact__form-input" id="name">
+                        <input type="text" class="contact__form-input" id="name" name="user-name" required>
 
                         <label for="email" class="contact__form-label">Adres e-mail: </label>
-                        <input type="text" class="contact__form-input" id="email">
+                        <input type="email" class="contact__form-input" id="email" name="email" required>
                     </div>
                     <label for="msg" class="contact__form-label">Wiadomość:</label>
-                    <textarea id="msg" class="contact__form-textarea"></textarea>
+                    <textarea name="msg" id="msg" class="contact__form-textarea" required></textarea>
 
-                    <button type="submit" class="contact__form-btn btn-special-animation">Wyślij</button>
+                    <button type="submit" class="contact__form-btn header-btn-animation">Wyślij</button>
+
+                    <p class="contact__form-msg-status"></p>
 
 
                 </form>
@@ -269,40 +272,41 @@
     </main>
 
 
-    <footer class="footer">
+    <footer class="footer section">
 
         <div class="wrapper">
 
             <div class="footer__boxes">
 
                 <div class="footer__box">
-                    <h3 class="footer__box-title"> <i class="fas fa-kiwi-bird"></i> MGUU.eu </h3>
+                    <h3 class="footer__box-logo"> MGUU<span class="footer__span">.eu</span> </h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur tempora odit optio
                         temporibus tempore cupiditate suscipit assumenda facilis dolores! Reiciendis!</p>
-                    <div class="footer__box-social">
+                    <!-- <div class="footer__box-social">
                         <a href="#" class="footer__box-link"><i class="fab fa-twitter-square"></i></a>
                         <a href="#" class="footer__box-link"><i class="fab fa-facebook-square"></i></a>
                         <a href="#" class="footer__box-link"><i class="fab fa-instagram-square"></i></a>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="footer__box footer__box-desktop">
-                    <h3 class="footer__box-title">Spoty</h3>
+                    <h3 class="footer__box-title">Produkty</h3>
                     <ul class="footer__box-list">
-                        <li class="footer__box-list-item"><a href="#">Spot Lagoon</a></li>
-                        <li class="footer__box-list-item"><a href="#">Spot Wave</a></li>
-                        <li class="footer__box-list-item"><a href="#">Spot Kite Safari</a></li>
-                        <li class="footer__box-list-item"><a href="#">Pozostałe spoty</a></li>
+                        <li class="footer__box-list-item"><a href="#">Wkładki higienizowane</a></li>
+                        <li class="footer__box-list-item"><a href="#">Oleje konopne</a></li>
+                        <li class="footer__box-list-item"><a href="#">Tekstylia</a></li>
+                        <!-- <li class="footer__box-list-item"><a href="#">Pozostałe produkty</a></li> -->
                     </ul>
                 </div>
 
                 <div class="footer__box footer__box-desktop">
                     <h3 class="footer__box-title">O Firmie</h3>
                     <ul class="footer__box-list">
-                        <li class="footer__box-list-item"><a href="#">O Nas</a></li>
-                        <li class="footer__box-list-item"><a href="#">Zarząd</a></li>
-                        <li class="footer__box-list-item"><a href="#">Kariera</a></li>
-                        <li class="footer__box-list-item"><a href="#">FAQ</a></li>
+                        <li class="footer__box-list-item"><a href="#about">O Nas</a></li>
+                        <li class="footer__box-list-item"><a href="#projects">Projekty</a></li>
+                        <li class="footer__box-list-item"><a href="https://wkladkizkonopi.pl/" target="_blank
+                            ">Sklep</a></li>
+                        <li class="footer__box-list-item"><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
 
@@ -314,6 +318,7 @@
     </footer>
 
     <script src="/js/main.js"></script>
+    <script src="/js/mail.js"></script>
 </body>
 
 </html>

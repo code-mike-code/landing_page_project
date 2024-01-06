@@ -35,7 +35,7 @@
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
-  color: #1755e7;
+  color: rgb(23, 85, 231);
   letter-spacing: 2px;
 }
 
@@ -79,7 +79,7 @@ body {
 
 .burger-btn {
   position: fixed;
-  bottom: 30px;
+  top: 20px;
   right: 20px;
   padding: 1.2em;
   background: none;
@@ -176,6 +176,12 @@ body {
   animation: navItemsAnimation 1s both;
 }
 
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+  background-color: #2e2e2e;
+}
+
 .header {
   position: relative;
   display: flex;
@@ -193,19 +199,22 @@ body {
   background-attachment: scroll;
 }
 .header__logo {
-  position: absolute;
-  top: 30px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
   padding: 0 0.8em 0 0.4em;
   font-family: "Vina Sans", sans-serif;
-  font-size: 6rem;
+  font-size: 5rem;
   border: none;
   border-radius: 10px;
   box-shadow: 2px 2px 2px #2e2e2e;
+  box-shadow: 6px 6px 10px -1px linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75)), -6px -6px 10px -1px rgba(240, 240, 240, 0.7);
   background: linear-gradient(45deg, rgba(20, 105, 241, 0.35), rgba(42, 10, 184, 0.75));
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
+  z-index: 1000;
 }
 .header__span {
   font-size: 3.2rem;
@@ -498,6 +507,7 @@ input[type=radio]:checked + label + .faq__accordion-content {
 }
 .contact__form-label {
   margin-bottom: 0.5em;
+  font-size: 2.2rem;
   text-transform: uppercase;
 }
 .contact__form-input {
@@ -505,14 +515,14 @@ input[type=radio]:checked + label + .faq__accordion-content {
   padding: 0.6em 1.2em;
   border: none;
   border-radius: 8px;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 }
 .contact__form-textarea {
   margin-bottom: 2em;
   padding: 0.6em 1.2em;
   border: none;
   border-radius: 8px;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   max-width: 100%;
   min-width: 100%;
   width: 100%;
@@ -520,17 +530,39 @@ input[type=radio]:checked + label + .faq__accordion-content {
 }
 .contact__form-btn {
   align-self: flex-end;
-  padding: 1em;
+  padding: 0.6em 0.8em;
   width: 100%;
   max-width: 300px;
+  font-size: 2.4rem;
   color: #fff;
   border: none;
   border-radius: 8px;
-  background-color: #1755e7;
+  background-color: rgb(23, 85, 231);
   cursor: pointer;
 }
 .contact__form-btn::before {
   background-color: #164dcc;
+}
+.contact__form-msg-status {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50px;
+  padding: 2em;
+  width: 60%;
+  border-radius: 10px;
+  font-size: 2.4rem;
+}
+
+.success {
+  display: flex;
+  background-color: #00ffaa;
+}
+
+.error {
+  display: flex;
+  background-color: hsl(9, 100%, 60%);
 }
 
 .footer {
@@ -538,7 +570,7 @@ input[type=radio]:checked + label + .faq__accordion-content {
   background-color: #2e2e2e;
 }
 .footer .wrapper {
-  padding: 6em 2em 2em;
+  padding: 5em 2em 2em;
 }
 .footer__box {
   font-size: 1.4rem;
@@ -549,7 +581,16 @@ input[type=radio]:checked + label + .faq__accordion-content {
 .footer__box-title {
   margin-bottom: 1em;
   font-size: 3rem;
-  text-transform: uppercase;
+}
+.footer__box-logo {
+  margin-bottom: 0.5em;
+  font-family: "Vina Sans", sans-serif;
+  font-size: 5.8rem;
+}
+.footer__span {
+  font-size: 3.2rem;
+  text-transform: lowercase;
+  color: #0fe29c;
 }
 .footer__box-social {
   margin: 2em 0 1em;
@@ -568,7 +609,7 @@ input[type=radio]:checked + label + .faq__accordion-content {
   color: #eee;
 }
 .footer__bottom-text {
-  padding: 2em;
+  padding: 3em;
   text-align: center;
 }
 
@@ -606,7 +647,7 @@ input[type=radio]:checked + label + .faq__accordion-content {
 @media (min-width: 768px) {
   .burger-btn {
     transform: scale(1.4);
-    bottom: 36px;
+    top: 36px;
     right: 26px;
   }
   .header__title {
@@ -617,6 +658,10 @@ input[type=radio]:checked + label + .faq__accordion-content {
   }
   .header__btn {
     font-size: 2.2rem;
+  }
+  .header__logo {
+    top: 36px;
+    left: 26px;
   }
   .about__title {
     font-size: 2.2rem;
@@ -672,11 +717,38 @@ input[type=radio]:checked + label + .faq__accordion-content {
     font-size: 1.9rem;
     line-height: 3rem;
   }
+  .footer__boxes {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer__box-desktop {
+    display: block;
+  }
+  .footer__box {
+    margin: 0 2em;
+    width: 25%;
+  }
+  .footer__box:first-child {
+    width: 50%;
+  }
+  .footer__box-title {
+    font-size: 2.4rem;
+  }
+  .footer__box-list {
+    list-style: none;
+  }
+  .footer__box-list-item {
+    margin-bottom: 1em;
+  }
+  .footer__box-list-item a {
+    color: #eee;
+    text-decoration: none;
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
     transform: scale(1.6);
-    bottom: 52px;
+    top: 52px;
     right: 42px;
   }
   .header {
@@ -684,6 +756,10 @@ input[type=radio]:checked + label + .faq__accordion-content {
   }
   .header__title {
     font-size: 8rem;
+  }
+  .header__logo {
+    top: 52px;
+    left: 42px;
   }
   .nav__item {
     font-size: 4.8rem;
@@ -753,5 +829,12 @@ input[type=radio]:checked + label + .faq__accordion-content {
 @media (min-width: 1100px) {
   .projects__card {
     width: 30%;
+  }
+  .shop-img__btn {
+    padding: 0.8em 1.6em;
+    width: 30%;
+  }
+  .shop-img hr {
+    max-width: 1000px;
   }
 }/*# sourceMappingURL=main.css.map */
