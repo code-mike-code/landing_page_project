@@ -2,6 +2,8 @@ const msgStatus = document.querySelector('.contact__form-msg-status')
 
 console.log(document.location.search)
 
+const handleMailForm = () => {
+
 if (document.location.search === '?mail_status=sent') {
 	msgStatus.classList.add('success')
 	msgStatus.textContent = 'Wiadomość wysłana!'
@@ -18,4 +20,4 @@ if (document.location.search === '?mail_status=error') {
 	setTimeout(() => {
 		msgStatus.classList.remove('error')
 	}, 3000)
-}
+}}
