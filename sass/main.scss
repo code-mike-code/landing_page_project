@@ -559,19 +559,22 @@ body {
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		top: 50px;
-		padding: 2em;
-		width: 60%;
+		top: 20px;
+		padding: 1em;
+		width: 80%;
+		height: 80px;
 		border-radius: 10px;
-		font-size: 2.4rem;
+		font-size: 2rem;
 	}
 }
 .success {
 	display: flex;
+	align-self: center;
 	background-color: $green-color;
 }
 .error {
 	display: flex;
+	align-self: center;
 	background-color: $red-color;
 }
 
@@ -676,6 +679,12 @@ body {
 			}
 		}
 	}
+    .contact{
+        &__form-msg-status {
+            font-size: 2.4rem;
+        }
+    }
+    
 }
 
 @media (min-width: 768px) {
@@ -774,6 +783,12 @@ body {
 		}
 	}
 
+    .contact{
+        &__form-msg-status {
+            width: 70%;
+            font-size: 2.8rem;
+        }
+    }
 	.footer {
 		&__boxes {
 			display: flex;
@@ -911,6 +926,14 @@ body {
 			}
 		}
 	}
+    .contact{
+        &__form-msg-status {
+            top: 40px;
+            width: 50%;
+            height: 100px;
+            font-size: 3rem;
+        }
+    }
 }
 
 @media (min-width: 1100px) {
