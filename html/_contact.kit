@@ -1,0 +1,27 @@
+<section class="contact section-padding section white-section" id="contact">
+
+    <h2 class="section-heading">Kontakt</h2>
+    <div class="wrapper">
+
+        <form action="mail.php" method="post" class="contact__form">
+
+            <div class="contact__form-top">
+
+                <label for="name" class="contact__form-label">Imię i nazwisko</label>
+                <input type="text" class="contact__form-input" id="name" name="user-name" required>
+
+                <label for="email" class="contact__form-label">Adres e-mail: </label>
+                <input type="email" class="contact__form-input" id="email" name="email" required>
+            </div>
+            <label for="msg" class="contact__form-label">Wiadomość:</label>
+            <textarea name="msg" id="msg" class="contact__form-textarea" required></textarea>
+
+            <button type="submit" class="contact__form-btn header-btn-animation">Wyślij</button>
+
+            <p class="contact__form-msg-status"></p>
+
+
+        </form>
+    </div>
+
+</section>
