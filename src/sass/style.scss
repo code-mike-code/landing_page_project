@@ -145,82 +145,6 @@ body {
 	display: none;
 }
 
-// .desktop-nav {
-// 	position: relative;
-// 	display: flex;
-// 	justify-content: end;
-// 	align-items: center;
-// 	padding: 0 5em;
-// 	margin: 0 auto;
-// 	width: 100%;
-// 	background-color: #f8ffe5;
-
-// 	&__logo {
-// 		position: absolute;
-// 		// display: flex;
-// 		// justify-content: start;
-// 		// align-items: center;
-// 		// top: 10px;
-// 		left: 20px;
-// 		padding: 0.2em 0.4em 0.2em 0.4em;
-// 		margin-left: 0.4em;
-// 		font-family: 'Vina Sans', sans-serif;
-// 		font-size: 3.8rem;
-// 		border: none;
-// 		border-radius: 10px;
-// 		box-shadow: 2px 2px 2px $dark;
-// 		box-shadow: 6px 6px 10px -1px $blue-gradient, -6px -6px 10px -1px rgba(240, 240, 240, 0.7);
-// 		background: $blue-gradient;
-// 		color: $pure-white;
-// 		text-decoration: none;
-// 		text-transform: uppercase;
-// 		cursor: pointer;
-// 		z-index: 1000;
-// 	}
-
-// 	&__span {
-// 		font-size: 3.2rem;
-// 		text-transform: lowercase;
-// 		color: $green-color-hover;
-// 	}
-
-// 	&__item {
-// 		position: relative;
-// 		display: inline-block;
-// 		padding: 0.8em 0.6em 0.6em 0.6em;
-// 		font-size: 2.6rem;
-// 		// padding: 0.4em;
-// 		text-decoration: none;
-// 		color: #06d6a0;
-// 		transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
-// 		text-transform: uppercase;
-
-// 		&::after {
-// 			position: absolute;
-// 			bottom: 0;
-// 			right: 0;
-// 			height: 5px;
-// 			width: 100%;
-// 			// padding: 1em;
-// 			margin-bottom: 0.4em;
-// 			color: red;
-// 			transform: scaleX(0);
-// 			background-color: #06d6a0;
-// 			content: '';
-// 			transition: transform 0.3s;
-// 		}
-// 		&:hover::after {
-// 			transform: scaleX(1);
-// 		}
-
-// 		&:hover {
-// 			background-color: #ffc43d;
-// 			color: #f8ffe5;
-// 		}
-// 	}
-
-// }
-
 //    HEADER
 // ======================================
 
@@ -274,11 +198,8 @@ body {
 	}
 
 	&__btn {
-		//position: fixed;
-		//bottom: 40px;
 		margin-top: 30px;
 		padding: 0.8em 1.6em;
-		//height: 40px;
 		font-size: 1.5rem;
 		border: none;
 		border-radius: 50px;
@@ -288,9 +209,14 @@ body {
 		text-decoration: none;
 		text-transform: uppercase;
 		cursor: pointer;
+		transform: scale(1);
+		transition: transform 0.3s ease;
 
 		&::before {
-			background-color: $light-white;
+			background-color: $green-color;
+		}
+		&:hover {
+			transform: scale(1.03);
 		}
 	}
 }
@@ -443,7 +369,7 @@ body {
 
 			&-btn {
 				position: absolute;
-				left: 50%;
+				left: 20%;
 				transform: translateX(-50%);
 				bottom: 2em;
 				padding: 0.6em 1.2em;
@@ -452,14 +378,19 @@ body {
 				border-radius: 50px;
 				width: 60%;
 				box-shadow: 4px 4px 7px $dark;
-				background: $green-color;
+				background: $pure-white;
 				color: $dark;
 				text-decoration: none;
 				text-transform: uppercase;
+				transform: scale(1);
+				transition: transform 0.3s ease;
 				cursor: pointer;
 
 				&::before {
-					background-color: $green-color-hover;
+					background-color: $green-color;
+				}
+				&:hover {
+					transform: scale(1.03);
 				}
 			}
 		}
@@ -490,27 +421,34 @@ body {
 	}
 	&__btn {
 		position: absolute;
-		transform: translateX(-50%);
+		left: 25%;
+		transform: translateX(-50%, -50%);
 		bottom: 20%;
 		padding: 0.6em 1.2em;
-
 		border: none;
 		border-radius: 50px;
 		width: 85%;
 		box-shadow: 4px 4px 7px $dark;
-		background: $green-color;
+		background: $pure-white;
 		color: $dark;
 		text-transform: uppercase;
+		transform: scale(1);
+		transition: transform 0.3s ease;
 		cursor: pointer;
 
 		&-link {
 			text-decoration: none;
 			color: $dark;
 			font-size: 2.2rem;
+			letter-spacing: 2px;
 		}
 
 		&::before {
-			background-color: $green-color-hover;
+			background-color: $green-color;
+		}
+
+		&:hover {
+			transform: scale(1.03);
 		}
 	}
 	hr {
@@ -1030,27 +968,20 @@ body {
 		// padding: 0 5em;
 		// margin: 0 auto;
 		width: 100%;
-		background-color: rgb(248, 255, 229);
+		background-color: $pure-white;
 		transition: background-color 0.3s ease;
 		transition: transform 0.3s ease-in-out;
 		z-index: 10000;
 
-
 		&--transparent {
-            background-color: rgba(248, 255, 229, 0.5); /* Przezroczyste białe tło */
-            backdrop-filter: blur(6px); /* Rozmycie tła */
-            transition: background-color 0.3s ease;
-			// transform: scaleX(0.9);
-			transform: scale(94%);
+			background-color: $transparent-desktop-nav;
+			backdrop-filter: blur(6px);
+			transform: scale(90%);
 			border-radius: 10px;
 		}
 
 		&__logo {
 			position: absolute;
-			// display: flex;
-			// justify-content: start;
-			// align-items: center;
-			// top: 10px;
 			left: 20px;
 			padding: 0.2em 0.4em 0.2em 0.4em;
 			margin-left: 0.4em;
@@ -1085,7 +1016,7 @@ body {
 			font-size: 2.6rem;
 			// padding: 0.4em;
 			text-decoration: none;
-			color: #06d6a0;
+			color: $purple-gradient;
 			transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 			text-transform: uppercase;
 
@@ -1107,10 +1038,10 @@ body {
 				transform: scaleX(1);
 			}
 
-			&:hover {
-				background-color: #ffc43d;
-				color: #f8ffe5;
-			}
+			// &:hover {
+			// 	background-color: #ffc43d;
+			// 	color: #f8ffe5;
+			// }
 		}
 	}
 
