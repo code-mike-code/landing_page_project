@@ -965,8 +965,6 @@ body {
 		display: flex;
 		justify-content: end;
 		align-items: center;
-		// padding: 0 5em;
-		// margin: 0 auto;
 		width: 100%;
 		background-color: $pure-white;
 		transition: background-color 0.3s ease;
@@ -1005,20 +1003,20 @@ body {
 			color: $green-color-hover;
 		}
 
-		// &--active {
-		// 	transform: translateX(0);
-		// }
-
 		&__item {
 			position: relative;
 			display: inline-block;
 			padding: 0.8em 0.6em 0.6em 0.6em;
 			font-size: 2.6rem;
-			// padding: 0.4em;
 			text-decoration: none;
-			color: $purple-gradient;
+			color: $main-color;
 			transition: 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 			text-transform: uppercase;
+			transition: color 0.3s ease;
+
+			&--active {
+				color: $green-color;
+			}
 
 			&::after {
 				position: absolute;
@@ -1026,22 +1024,15 @@ body {
 				right: 0;
 				height: 5px;
 				width: 100%;
-				// padding: 1em;
 				margin-bottom: 0.4em;
-				color: red;
 				transform: scaleX(0);
-				background-color: #06d6a0;
+				background-color: $green-color;
 				content: '';
 				transition: transform 0.3s;
 			}
 			&:hover::after {
 				transform: scaleX(1);
 			}
-
-			// &:hover {
-			// 	background-color: #ffc43d;
-			// 	color: #f8ffe5;
-			// }
 		}
 	}
 

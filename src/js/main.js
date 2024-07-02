@@ -5,10 +5,14 @@ const navBtnBars = document.querySelector('.burger-btn__bars')
 const allSections = document.querySelectorAll('.section')
 const footerYear = document.querySelector('.footer__year')
 const msgStatus = document.querySelector('.contact__form-msg-status')
-
 const navDesktop = document.querySelector('.desktop-nav')
+const allNavDesktopItems = document.querySelectorAll('.desktop-nav__item')
 
+const setActiveClass = event => {
+	allNavDesktopItems.forEach(item => item.classList.remove('desktop-nav__item--active'))
 
+	event.currentTarget.classList.add('desktop-nav__item--active')
+}
 
 const handleNav = () => {
 	nav.classList.toggle('nav--active')
@@ -44,16 +48,12 @@ const handleObserver = () => {
 }
 
 const scrollFunction = () => {
-
 	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-		navDesktop.classList.add("desktop-nav--transparent");
+		navDesktop.classList.add('desktop-nav--transparent')
 	} else {
-		navDesktop.classList.remove("desktop-nav--transparent");
+		navDesktop.classList.remove('desktop-nav--transparent')
 	}
 }
-
-
-
 
 const handleMailForm = () => {
 	if (document.location.search === '?mail_status=sent') {
@@ -84,3 +84,7 @@ handleCurrentYear()
 navBtn.addEventListener('click', handleNav)
 window.addEventListener('scroll', handleObserver)
 window.onscroll = () => scrollFunction()
+
+allNavDesktopItems.forEach(item => {
+	item.addEventListener('click', setActiveClass)
+})
