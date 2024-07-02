@@ -53,7 +53,7 @@ const handleCardToggle = event => {
 		card.classList.add('projects__card--active')
 
 		btn.textContent = 'OK'
-		btn.style.fontSize = '0.4rem'
+		btn.style.fontSize = '0.6rem'
 	}
 }
 
