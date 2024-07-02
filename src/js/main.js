@@ -7,6 +7,8 @@ const footerYear = document.querySelector('.footer__year')
 const msgStatus = document.querySelector('.contact__form-msg-status')
 const navDesktop = document.querySelector('.desktop-nav')
 const allNavDesktopItems = document.querySelectorAll('.desktop-nav__item')
+const selectButtons = document.querySelectorAll('.projects__card-info-btn')
+const cards = document.querySelectorAll('.projects__card')
 
 const setActiveClass = event => {
 	allNavDesktopItems.forEach(item => item.classList.remove('desktop-nav__item--active'))
@@ -33,6 +35,26 @@ const handleNavItemsAnimation = () => {
 		item.style.animationDelay = '.' + delayTime + 's'
 		delayTime++
 	})
+}
+
+// Funkcja do obsługi kliknięcia w przycisk "Wybierz/OK"
+const handleCardToggle = event => {
+	const btn = event.currentTarget
+	const card = btn.closest('.projects__card')
+	const isActive = card.classList.contains('projects__card--active')
+
+	cards.forEach(card => {
+		card.classList.remove('projects__card--active')
+		card.querySelector('.projects__card-info-btn').textContent = 'Wybierz'
+		btn.style.fontSize = '1.5rem'
+	})
+
+	if (!isActive) {
+		card.classList.add('projects__card--active')
+
+		btn.textContent = 'OK'
+		btn.style.fontSize = '0.4rem'
+	}
 }
 
 const handleObserver = () => {
@@ -88,3 +110,4 @@ window.onscroll = () => scrollFunction()
 allNavDesktopItems.forEach(item => {
 	item.addEventListener('click', setActiveClass)
 })
+selectButtons.forEach(btn => btn.addEventListener('click', handleCardToggle))
