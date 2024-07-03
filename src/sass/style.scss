@@ -98,8 +98,8 @@ body {
 		display: block;
 		color: $pure-white;
 		text-decoration: none;
-		margin: 0.5em 0;
-		padding: 0.6em 1.6em;
+		margin: 0.5em 0 0;
+		padding: 0.5em 1.6em 0;
 		font-size: 4rem;
 
 		&::before {
@@ -283,13 +283,11 @@ body {
 		color: $pure-white;
 		text-align: center;
 		perspective: 1000px;
-		transition: transform 0.7s ease-in, width 0.5s ease, height 0.5s ease;
+		transition: transform 0.5s ease-in;
 
 		&--active {
-			// position: absolute;
-			// justify-content: center;
-			transform: scale(1.8);
-			height: 60vh;
+			transform: scale(1.6);
+			// height: 100vh;
 			z-index: 12000;
 		}
 
@@ -379,30 +377,7 @@ body {
 			}
 
 			&-btn {
-				position: absolute;
-				left: 20%;
-				transform: translateX(-50%);
-				bottom: 2em;
-				padding: 0.6em 1.2em;
-				font-size: 1.5rem;
-				border: none;
-				border-radius: 50px;
-				width: 60%;
-				box-shadow: 4px 4px 7px $dark;
-				background: $pure-white;
-				color: $dark;
-				text-decoration: none;
-				text-transform: uppercase;
-				transform: scale(1);
-				transition: transform 0.3s ease;
-				cursor: pointer;
-
-				&::before {
-					background-color: $green-color;
-				}
-				&:hover {
-					transform: scale(1.03);
-				}
+				display: none;
 			}
 		}
 	}
@@ -431,14 +406,15 @@ body {
 		padding: 1em 0;
 	}
 	&__btn {
-		position: absolute;
-		left: 25%;
-		transform: translateX(-50%, -50%);
-		bottom: 20%;
-		padding: 0.6em 1.2em;
+		// position: absolute;
+		// left: 50%;
+		// transform: translateX(-50%, -50%);
+		// bottom: 20%;
+		margin: 2.5em auto 0;
+		padding: 0.6em 1.4em;
 		border: none;
 		border-radius: 50px;
-		width: 85%;
+		width: 95%;
 		box-shadow: 4px 4px 7px $dark;
 		background: $pure-white;
 		color: $dark;
@@ -729,6 +705,14 @@ body {
 		right: 26px;
 	}
 
+	.nav {
+		&__item {
+			margin: 0.5em 0;
+			padding: 0.5em 1.6em;
+			font-size: 4.4rem;
+		}
+	}
+
 	.header {
 		&__title {
 			font-size: 6rem;
@@ -881,6 +865,8 @@ body {
 
 	.nav {
 		&__item {
+			margin: 0.6em 0;
+			padding: 0.6em 1.6em;
 			font-size: 4.8rem;
 		}
 	}
@@ -1065,6 +1051,34 @@ body {
 	.projects {
 		&__card {
 			width: 30%;
+		}
+
+		&__card-info-btn {
+			display: block;
+			position: absolute;
+			left: 20%;
+			transform: translateX(-50%);
+			bottom: 2em;
+			padding: 0.6em 1.2em;
+			font-size: 1.5rem;
+			border: none;
+			border-radius: 50px;
+			width: 60%;
+			box-shadow: 4px 4px 7px $dark;
+			background: $pure-white;
+			color: $dark;
+			text-decoration: none;
+			text-transform: uppercase;
+			transform: scale(1);
+			transition: transform 0.3s ease;
+			cursor: pointer;
+
+			&::before {
+				background-color: $green-color;
+			}
+			&:hover {
+				transform: scale(1.03);
+			}
 		}
 	}
 	.shop-img {
