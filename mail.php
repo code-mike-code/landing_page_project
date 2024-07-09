@@ -4,14 +4,14 @@
 $name = $_POST["name"];
 $from = $_POST["email"];
 $subject = "Wiadomość ze strony MGUU.eu";
-$to = "flashbanghere@gmail.com";
+$to = "m.majewski.dm@gmail.com";
 $message = $_POST["msg"];
 
 
 $txt = "Imię: " . $name . "\r\n" . "Email: " . $from . "\r\n" . "\r\n" . "Treść: " . $message;
 
 $headers = "From: " . $from . "\r\n";
-$headers = "Replay-to: " . $from . "\r\n";
+$headers = "Reply-to: " . $from . "\r\n";
 
 $mail_status  = mail($to, $subject, $txt, $headers);
 
