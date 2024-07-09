@@ -1053,33 +1053,33 @@ body {
 			width: 30%;
 		}
 
-		&__card-info-btn {
-			display: block;
-			position: absolute;
-			left: 20%;
-			transform: translateX(-50%);
-			bottom: 2em;
-			padding: 0.6em 1.2em;
-			font-size: 1.5rem;
-			border: none;
-			border-radius: 50px;
-			width: 60%;
-			box-shadow: 4px 4px 7px $dark;
-			background: $pure-white;
-			color: $dark;
-			text-decoration: none;
-			text-transform: uppercase;
-			transform: scale(1);
-			transition: transform 0.3s ease;
-			cursor: pointer;
+		// &__card-info-btn {
+		// 	display: block;
+		// 	position: absolute;
+		// 	left: 20%;
+		// 	transform: translateX(-50%);
+		// 	bottom: 2em;
+		// 	padding: 0.6em 1.2em;
+		// 	font-size: 1.5rem;
+		// 	border: none;
+		// 	border-radius: 50px;
+		// 	width: 60%;
+		// 	box-shadow: 4px 4px 7px $dark;
+		// 	background: $pure-white;
+		// 	color: $dark;
+		// 	text-decoration: none;
+		// 	text-transform: uppercase;
+		// 	transform: scale(1);
+		// 	transition: transform 0.3s ease;
+		// 	cursor: pointer;
 
-			&::before {
-				background-color: $green-color;
-			}
-			&:hover {
-				transform: scale(1.03);
-			}
-		}
+		// 	&::before {
+		// 		background-color: $green-color;
+		// 	}
+		// 	&:hover {
+		// 		transform: scale(1.03);
+		// 	}
+		// }
 	}
 	.shop-img {
 		&__btn {
