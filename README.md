@@ -5,9 +5,13 @@ This is my second landing page project and this one is made for commercial use f
 </br>
 
 • HTML5
+</hr>
 • SCSS
+</hr>
 • JavaScript
+</hr>
 • PHP
+</hr>
 • GULP
 </hr>
 </br>
