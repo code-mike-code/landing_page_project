@@ -18,7 +18,7 @@ See the live version of [Landing Page MGUU.eu](https://code-mike-code.github.io/
 ## 💡 Technologies
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-
+<img src="https://skillicons.dev/icons?i=html,css,scss,javascript" /><br/>
 
 &nbsp;
  
