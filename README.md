@@ -1,6 +1,7 @@
 # Landing Page - MGUU.eu
 
-About the Project
+About the Project:
+
 This landing page project demonstrates the use of HTML5, SCSS, and JavaScript to create a modern, dynamic, and visually engaging design. The workflow was optimized using Gulp, streamlining tasks such as compiling SCSS and minifying files. The combination of these technologies ensures a smooth and efficient development process while maintaining high-quality output.
 
 See the live version of [Landing Page MGUU.eu](https://code-mike-code.github.io/landing_page_project/).
